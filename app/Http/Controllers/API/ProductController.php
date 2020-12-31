@@ -62,7 +62,8 @@ class ProductController extends Controller
 
         $product = Product::Create([
             'name' => $request -> name,
-            'description' => $request -> description,
+            'body' => $request -> body,
+            'description' => $request-> description,
             'price' => $request -> price,
             'code' => $request -> code,
             'category_id' => $request -> category_id,
@@ -126,6 +127,7 @@ class ProductController extends Controller
 
 
         $product -> name = $request -> name;
+        $product -> body => $request -> body,
         $product -> description = $request -> description;
         $product -> price = $request -> price;
         $product -> code = $request -> code;
@@ -135,7 +137,7 @@ class ProductController extends Controller
 
         return Response([
             'status' => 'product updated successfully',
-            'product' => $product
+            'product' => $product'body' => $request -> body,
 
         ]);
     }
